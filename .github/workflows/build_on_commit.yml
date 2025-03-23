@@ -32,9 +32,10 @@ jobs:
     - name: PlatformIO Run
       run: pio run
 
+    # Upload Build Artifact
     - name: 'Upload Build Artifact'
       uses: actions/upload-artifact@v3
       with:
-        name: ${{github.event.repository.name}}_build_${{github.run_number}}
+        name: ${{ github.event.repository.name }}_build_${{ github.run_number }}
         path: |
           .pio/build/**  # Ensure this matches the actual build output path
